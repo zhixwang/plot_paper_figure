@@ -4,7 +4,7 @@ Without abandant settings, and get paper quality figures.
 
 Example:
 
-from wzx_library.plot_2D_line import plot_2D_line as p2l
+from figure_library.plot_2D_line import plot_2D_line as p2l
 
 fig1 = p2l(figheight = 9, figwidth = 8, xlabel = 'Xlabel',xlim=xlim, ylabel = 'Ylabel', fontsize = 20, fontname = 'Segoe UI')
 or
