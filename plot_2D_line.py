@@ -79,7 +79,6 @@ class plot_2D_line:             # One class for one figure
 
     def __init__(self,*args,**kwargs):
         self.default = {'title':"", 'xlabel':"",'ylabel':"", 'xlim':None, 'ylim': None, 'figwidth': 9, 'figheight':8, \
-        'xticks':[] , 'yticks':[], \
         'fontsize':20,'fontname':'Segoe UI','fontweight':'medium','xscale':'linear','yscale':'linear'}
         """
         self.title = 
@@ -104,8 +103,11 @@ class plot_2D_line:             # One class for one figure
                 self.default[item] = kwargs[item]
 
         self.create_fig()
-        self.ax.set(title=self.default['title'], xlabel=self.default['xlabel'], ylabel=self.default['ylabel'],  \
-            xticks = self.default['xticks'], yticks = self.default['yticks'])
+        self.ax.set(title=self.default['title'], xlabel=self.default['xlabel'], ylabel=self.default['ylabel'])
+        if ('xticks' in kwargs):
+            self.ax.set(xticks = kwargs['xticks'])
+        if ('yticks' in kwargs):
+            self.ax.set(yticks = kwargs['yticks'])
 
     
 
